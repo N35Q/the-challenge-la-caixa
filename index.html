@@ -17,10 +17,27 @@
       background-size: 20%;
       }
 
-      .titleone {
-      font-family: 'Bangers';
-      font-size: 80px;
+      .encabezado1 {
+      display: flex;
+      justify-content: flex-start;
+      }
+
+      .encabezado2 {
+      display: inline-grid;
+      align-content: center;
       text-align: center;
+      width: 60%;
+      }
+
+      .titleone {
+      font-size: 80px;
+      font-family: 'Bangers';
+      text-align: center;
+      display: inline-block;
+      }
+
+      .titleoneone {
+      align-content: center;
       color: black;
       border-right: 3px solid black; /* Cursor de escritura */
       }
@@ -28,8 +45,15 @@
 
   <body>
 
-    <p class="titleone"></p>
-    
+    <div class="encabezado1">
+      <div style="width: 20%;">
+      </div>
+
+      <div class="encabezado2">
+        <p class="titleone"><span class="titleoneone"></span></p>
+      </div>
+    </div>
+
     <script>
         const texto = "Hola, este es nuestra propuesta de proyecto para The Challenge:";
         let i = 0;
@@ -37,16 +61,16 @@
 
         function escribirTexto() {
             if (i < texto.length) {
-                document.querySelector(".titleone").innerHTML += texto.charAt(i);
+                document.querySelector(".titleoneone").innerHTML += texto.charAt(i);
                 i++;
                 setTimeout(escribirTexto, velocidad);
             } else {
-                document.querySelector(".titleone").style.borderRight = "none"; // Quita el cursor al final
+                document.querySelector(".titleoneone").style.borderRight = "none"; // Quita el cursor al final
             }
         }
 
         escribirTexto();
     </script>
-    
+
   </body>
 </html>
